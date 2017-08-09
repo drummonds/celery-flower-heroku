@@ -5,6 +5,11 @@ import os
 import re
 import time
 
+# .Env
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+
 def kill_flower():
     """Kill app"""
     local('heroku destroy {0} --confirm {0}'.format(os.environ['HEROKU_FLOWER_NAME']))
